@@ -3,7 +3,7 @@ Title: FPKM Calculation
 Version: 0.0.0.9000
 Author: Veronica Gosnell <veronicagosnell@gmail.com>
 Maintainer: Veronica Gosnell <veronicagosnell@gmail.com>
-Description: Calculates fragment per kilobase pair of transcript million mapped reads of RNA-seq data. 
+Description: Calculates fragment per kilobase pair of transcript per million mapped reads of RNA-seq data. 
 Depends: R (>= 3.1.2)
 License: MIT + file LICENSE
 Encoding: UTF-8
