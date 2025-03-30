@@ -82,3 +82,5 @@ devtools::install()
 library(FPKMcalc)
 
 
+# to clone to GitHub -> use Existing project, GitHub last by happy git workflow
+usethis::use_github()
