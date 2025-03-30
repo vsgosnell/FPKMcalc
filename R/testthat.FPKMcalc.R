@@ -1,0 +1,44 @@
+#load the new package library
+library(FPKMcalc)
+
+# test the function
+
+# Define the vectors
+read_counts <- c(gene1 = 100, gene2 = 200, gene3 = 150)
+gene_lengths <- c(gene1 = 2000, gene2 = 1500, gene3 = 1200)
+total_reads <- 10000000
+
+# Create a data frame
+df <- data.frame(
+  Gene = names(read_counts),
+  Read_Counts = read_counts,
+  Gene_Lengths = gene_lengths
+)
+
+# Print the data frame
+print(df)
+
+fpkm_calc(read_counts, gene_lengths, total_reads)
+
+
+
+#use testthat()
+
+library(testthat)
+test_that("FPKM calculation is correct", {
+  read_counts <- c(gene1 = 100, gene2 = 200, gene3 = 150)
+  gene_lengths <- c(gene1 = 2000, gene2 = 1500, gene3 = 1200)
+  total_reads <- 10000000
+
+  expected_fpkm <- c(gene1 = 5, gene2 = 13.33333, gene3 = 12.5)
+  result <- fpkm_calc(read_counts, gene_lengths, total_reads)
+
+  expect_equal(round(result, 5), round(expected_fpkm, 5))
+})
+
+
+
+# test with use_test()
+usethis::use_test("FPKMcalc")
+
+
