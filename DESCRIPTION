@@ -1,15 +1,23 @@
 Package: FPKMcalc
-Title: FPKM Calculation
-Version: 0.0.0.9000
-Author: Veronica Gosnell <veronicagosnell@gmail.com>
-Maintainer: Veronica Gosnell <veronicagosnell@gmail.com>
-Description: Calculates fragment per kilobase pair of transcript per million mapped reads of RNA-seq data. 
-Depends: R (>= 3.1.2)
+Title: Calculate FPKM from RNA-seq Data
+Version: 0.1.0
+Authors@R: person("Your", "Name", email = "your.email@example.com", role = c("aut", "cre"))
+Description: A package for calculating FPKM (Fragments Per Kilobase of transcript per Million mapped reads) from RNA-seq count data.
 License: MIT + file LICENSE
+Depends: 
+    R (>= 4.0)
+Imports: 
+    dplyr,
+    tidyr,
+    data.table,
+    GenomicRanges,
+    Biostrings,
+    ggplot2,
+    magrittr
+Suggests:
+    testthat,
+    knitr,
+    rmarkdown
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
-Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
 LazyData: true
+RoxygenNote: 7.2.3
