@@ -1,0 +1,21 @@
+#' Calculate FPKM
+#'
+#' This function calculates the FPKM (Fragments Per Kilobase of transcript per Million mapped reads)
+#' for each gene in RNA-seq data
+#'
+#' @param read_counts A numeric vector of read counts per gene
+#' @param gene_lengths A numeric vector of gene lengths in base pairs
+#' @param total_reads A numeric value representing the total number of mapped reads in the RNA-seq experiment
+#'
+#' @return A numeric vector of FPKM values, named by gene
+#' @export
+fpkm_calc <- function(read_counts, gene_lengths, total_reads) {
+  if (length(read_counts) != length(gene_lengths)) {
+    stop("read_counts and gene_lengths must be of the same length")
+  }
+
+  fpkm_values <- (read_counts * 1e9) / (gene_lengths * total_reads)
+  names(fpkm_values) <- names(read_counts)
+  return(fpkm_values)
+}
+
