@@ -1,0 +1,31 @@
+---
+title: "Introduction to FPKMcalc"
+author: "Veronica Gosnell"
+date: "2025-04-14"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to FPKMcalc}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+
+### ✅ Build & Document with `devtools`
+
+```{r build, include =FALSE}
+install.packages("devtools")
+devtools::document()      # Generate NAMESPACE & man/ files
+devtools::build()         # Build tar.gz
+devtools::check()         # Run package checks
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(FPKMcalc)
+
+counts <- c(100, 200, 400)
+lengths <- c(1, 2, 2)
+calculate_fpkm(counts, lengths)
+
+```
+
