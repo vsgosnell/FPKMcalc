@@ -13,11 +13,18 @@ vignette: >
 ### ✅ Build & Document with `devtools`
 
 ```{r build, include =FALSE}
-install.packages("devtools")
 devtools::document()      # Generate NAMESPACE & man/ files
 devtools::build()         # Build tar.gz
 devtools::check()         # Run package checks
 ```
+
+# Test the function with a simple example
+
+```{r}
+library(FPKMcalc)
+calculate_fpkm(c(100, 200, 400), c(1, 2, 2))
+```
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -28,4 +35,7 @@ lengths <- c(1, 2, 2)
 calculate_fpkm(counts, lengths)
 
 ```
+
+
+
 
