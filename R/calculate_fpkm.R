@@ -1,3 +1,6 @@
+#remove all variables from environment
+rm(list = ls())
+
 #' Calculate FPKM
 #'
 #' @param counts Numeric vector of read counts
