@@ -12,3 +12,4 @@ calculate_fpkm <- function(counts, lengths) {
   fpkm <- (counts / lengths) / (total_counts / 1e6)
   return(fpkm)
 }
+
