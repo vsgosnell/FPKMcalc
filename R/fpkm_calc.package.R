@@ -5,13 +5,9 @@ rm(list = ls())
 .rs.restartR()
 
 #load required libraries
-install.packages("devtools")
 library(devtools)
-install.packages("shiny")
 library(shiny)
-install.packages("usethis")
 library(usethis)
-install.packages("roxygen2")
 library(roxygen2)
 
 #make the project a Git repo
@@ -47,11 +43,6 @@ use_r("fpkm_calc")
 
 
 
-#call load_all() to make the function available for experimentation
-devtools::load_all()
-
-
-
 # test the function
 read_counts <- c(gene1 = 100, gene2 = 200, gene3 = 150)
 gene_lengths <- c(gene1 = 2000, gene2 = 1500, gene3 = 1200)
@@ -65,17 +56,11 @@ exists("FPKMcalc", where = globalenv(), inherits = FALSE)
 #should return FALSE
 
 
-#check the function -> in the console!!!!
-devtools::check()
-
 #preview help file
 ?fpkm_calc
 
 #to configure valid license for the function:
 use_mit_license()
-
-#install the package
-devtools::install()
 
 
 # load the FPKMcalc package library
